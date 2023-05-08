@@ -140,9 +140,7 @@ a{
   color: var(--logo);
 }
 
-.nav-branding:hover {
 
-}
 
 .nav-branding :first-child {
   font-family: 'Vast Shadow', cursive;
@@ -152,17 +150,14 @@ a{
   text-transform:capitalize;
   padding: 2% 0;
   color: #000000;
-  border-bottom: 1px solid #2b2b2b;
-}
-
-.nav-item:hover {
-  opacity: 1;
-  transition: .3s;
+  margin: 10% auto;
 }
 
 .nav-link{
   color: #2b2b2b;
 }
+
+
 
 /*---------------END OF nav-bar-------------------*/
 
@@ -185,9 +180,7 @@ main {
   font-family: 'Bowlby One', cursive;
 }
 
-#welcome-section .subtopic {
-  
-}
+
 
 #welcome-section .section-container {
   display: grid;
@@ -247,11 +240,11 @@ main {
   cursor: pointer;
 }
 
-.panel .mail-icon {
+.mail-icon {
   border: transparent solid 1.5px;
   border-radius: 100px;
-  border-color: var(--welcome-btn-text);
-  background-color: var(--welcome-bg);
+  border-color: var(--welcome-btn);
+  background-color: var(--welcome-btn);
   width: 38px;
   height: 38px;
   padding: 5px 10px;
@@ -259,10 +252,10 @@ main {
   transition-duration: 0.4s;
 }
 
-.panel .mail-icon:hover {
+.mail-icon:hover {
   background-color: var(--welcome-btn);
   border: 1.5px solid var(--hamburger);
-  box-shadow: 0 5px var(--hamburger);
+  box-shadow: 0 4px var(--hamburger);
 }
 
 .see-projects {
@@ -313,47 +306,40 @@ main {
 
 #portfolio-section .section-container .projects .project-tile{
   background-color:#24173a;
-  height: 150px;
+  height: 200px;
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
   place-items: center; 
+  justify-content: space-between;
   border-radius: 20px;
+  border: 5px solid var(--hamburger);
   padding: 3% 7%;
-  box-shadow: 2px 2px 4px 2px #00000077;
   transition-duration: 0.4s;
 }
 
 #portfolio-section .section-container .projects .project-tile:hover{
-  box-shadow: 8px 8px 10px 5px #000000;
+  box-shadow: 0 15px var(--portfolio-subtopic);
+  border-color: var(--portfolio-subtopic);
 }
 
 #portfolio-section .section-container .projects .project-tile img {
   height: 90%; 
   width: 40%;
   border-radius: 10px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 #portfolio-section .section-container .projects .project-tile p {
   height: 90%; 
   width: 60%;
-  font-size: medium;
+  font-size: small;
 }
+
+
 
 .show-all {
   width: max-content;
-  margin: 5% auto;
-  display: flex;
-  align-items: center;
-  font-size: 25px;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: var(--welcome-btn);
-  color: var(--welcome-btn-text);
-}
-
-.show-all {
   margin: 5% auto;
   display: flex;
   align-items: center;
@@ -377,7 +363,7 @@ main {
 /* 3. Connect Section */
 #connect-section {
   background-color: var(--portfolio-subtopic);
-  
+  padding-bottom: 5%;
 }
 
 #connect-section form {
@@ -386,6 +372,7 @@ main {
   padding: 8% 8%;
   justify-items: center;
   align-items: center;
+  margin-top: 5%;
 }
 
 .row {
@@ -400,12 +387,9 @@ main {
   width: 100%;
 }
 
-form h5 {
-  
-}
+
 
 label {
-  
   display: inline-block;
   color: rgb(163, 163, 163);
   font-size: 0.7rem;
@@ -418,6 +402,7 @@ label {
   border-bottom: solid 1px rgb(199, 199, 199);
   outline: none;
   color: #1f1235;
+  font-family: inherit;
 }
 
 #connect-section textarea {
@@ -473,9 +458,7 @@ button:hover {
   box-shadow: 0 5px var(--hamburger);
 }
 
-.resume-btn {
 
-}
 
 .form-btn {
   margin-top: 40px;
@@ -495,7 +478,13 @@ button:hover {
 
 
 /*----------------FOOTER------------------*/
+footer {
+  background-color: #1b1425;
+  color: #f4f0fc;
+  padding: 5%;
+}
 
+/*media queries*/
 @media screen and (min-width: 360px) and (max-width: 430px){
   section .section-container{
     margin-top: 5rem;
@@ -589,6 +578,10 @@ button:hover {
 
 /*-------------min-width: 1000px--------------*/
 @media screen and (min-width: 1000px) {
+  .up {
+    display: none;
+  }
+
   #welcome-section .section-container {
     grid-template-areas: 
       'header . midcard'
@@ -643,10 +636,18 @@ button:hover {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 40px;
+    margin-top: 5%;
   }
 
   #portfolio-section .section-container .projects .project-tile {
     justify-self: start;
+    height: 250px;
+  }
+
+  #connect-section form {
+    height: 90%;
+    width: 50%;
+    justify-self: center;
   }
 }
 
